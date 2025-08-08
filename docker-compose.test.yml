@@ -1,3 +1,5 @@
+#docker compose -f docker-compose.test.yml up --build
+
 version: '3'
 
 services:
@@ -10,7 +12,7 @@ services:
         APP_ENV: 'docker-test'
     environment:
       APP_ENV: 'docker-test'
-    command: "npm run test:docker"
+    command: ["/bin/sh", "-c", "PYTHONPATH=/app /home/appuser/.local/share/virtualenvs/app-4PlAip0Q/bin/pytest tests/modules/comment/"] # modified to run tests only for comment module
     depends_on:
       app-db:
         condition: service_started

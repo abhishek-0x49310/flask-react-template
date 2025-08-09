@@ -22,6 +22,7 @@ from modules.comment.types import (
 class CommentView(MethodView):
     @access_auth_middleware
     def post(self, account_id: str, task_id: str) -> ResponseReturnValue:
+        print("REQUEST RECEIVED")
         request_data = request.get_json()
 
         if request_data is None:

@@ -1,10 +1,11 @@
 import React, { PropsWithChildren } from 'react';
-
+import './app-layout.css'
 import { Header } from 'frontend/components';
 import Sidebar from 'frontend/components/sidebar';
 
 export const AppLayout: React.FC<PropsWithChildren> = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
+  console.log(children)
 
   return (
     <div className="dark:bg-boxdark-2 dark:text-bodydark">
